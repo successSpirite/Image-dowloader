@@ -15,14 +15,16 @@ body{
     flex-direction: column;
     width: 100%;
     min-height: 100vh;
-    /* border: .2em solid blue; */
     overflow: hidden;
-    /* background-color: black;   nightMode */
+    transition: 0.3s ease;
     
 }
-.section .darkMode{
-  background-color: #000;
+
+/* Dark mode for ONLY this section */
+.section.dark-mode {
+  background: #0f172a;
 }
+
 nav{
     position: fixed;
     top: 0;
@@ -109,6 +111,7 @@ nav h1{
   --circle-bg:black;
   --circle-inset: calc((var(--circle-diameter) - var(--switch-height)) / 2);
   /* border: .2em solid red; */
+  overflow: hidden;
 }
 
 .ui-switch input {
@@ -246,7 +249,9 @@ header{
     justify-content: center;
     align-items: center;
     width: 100%;
+
 }
+
 
  .Browse h1{
     font-size: 1rem;
@@ -254,6 +259,7 @@ header{
     color: white;
     font-style: italic;
  }
+ 
  .page_tag{
     position: relative;
     top: -100%;
@@ -270,13 +276,10 @@ header{
     height: 100%;
     /* border: .2em solid red; */
     /* background-color:  rgb(80, 10, 74) */
-    
-
  }
  /* Script */
  .fadeUp{
       animation: fadeInUp 1s ease-in-out .5s backwards;
-
  }
 
   @keyframes fadeInUp {
@@ -324,6 +327,7 @@ header{
   font-size: calc(.5em + .6vw);
   background-color: black;
 }
+
 
 
 
