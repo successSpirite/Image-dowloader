@@ -17,26 +17,28 @@ window.addEventListener("load", createStars);
 
 
 
-// switches Area Button
-document.addEventListener("DOMContentLoaded", ()=>{
 
-  const switchBtn = document.querySelector(".ui-switch");
-const Section = document.querySelector(".section");
+// Dark and Light mode 
 
+const toggle = document.getElementById("themeToggle");
+const section = document.querySelector(".section"); // change if needed
 
-switchBtn.addEventListener("click", ()=>{
+toggle.addEventListener("change", () => {
+  section.classList.toggle("dark-mode");
 
-  // if (Section.classList.contains('darkMode')) {
-  //   Section.classList.remove('darkMode');
-    
-  // } else {
-    
-  //    Section.classList.add('darkMode');
-  // }
-   Section.classList.toggle('darkMode');
-   console.log("Dar");
- 
+  if (section.classList.contains("dark-mode")) {
+    localStorage.setItem("sectionTheme", "dark");
+  } else {
+    localStorage.setItem("sectionTheme", "light");
+  }
 });
+
+// Keep state after refresh
+window.addEventListener("load", () => {
+  if (localStorage.getItem("sectionTheme") === "dark") {
+    section.classList.add("dark-mode");
+    toggle.checked = true;
+  }
 });
 
 
@@ -44,6 +46,7 @@ switchBtn.addEventListener("click", ()=>{
 
 
 // Loading Images operator
+
 // search Button
 const searchInput = document.querySelector(".searchBTN input");
 const searchBtn = document.querySelector(".searchBTN button");
@@ -53,7 +56,9 @@ let searchQuery = "";
 searchBtn.addEventListener("click", () => {
   searchQuery = searchInput.value.trim();
   imageContainer.innerHTML = ""; // clear old images
+    // loader.style.display = "flex";
   getPhotos();
+    
 });
 
 // when we click on Enter key
@@ -66,8 +71,14 @@ searchInput.addEventListener("keypress", (e) => {
 });
  
 // FadUp events
-const pageTag = document.querySelector(".page_tag");
+
+function FadeEvent() {
+  const pageTag = document.querySelector(".page_tag");
 const PageImge = document.querySelector(".img_image");
+    pageTag.classList.add("fadeUp");
+    PageImge.classList.add("fadeUp");
+      
+    };
 
 // Loadersa and images containers events 
 
@@ -94,8 +105,7 @@ function imageLoaded() {
   if (imagesLoaded === totalImages) {
     ready = true;
     loader.style.display = "none"; // hide loader
-    pageTag.classList.add("fadeUp");
-    PageImge.classList.add("fadeUp");
+    FadeEvent();     //FadeEvent added
     console.log("Ready for more images:", ready);
   }
 }
@@ -164,7 +174,9 @@ function getApiUrl() {
 // Get photos from Unsplash
 
 async function getPhotos() {
-  // loader.style.display = "flex";
+   
+  loader.style.display = "flex";
+ 
 
   try {
     const response = await fetch(getApiUrl());
@@ -173,6 +185,7 @@ async function getPhotos() {
     photosArray = searchQuery ? data.results : data;
 
     displayPhotos();
+    
   } catch (error) {
     console.error("Error fetching Unsplash photos:", error);
   }
