@@ -4,7 +4,7 @@
 
 
 
-# CletuSplash 📸
+# CletuSplash 
 
 ### Discover. Preview. Download. Share.
 
