@@ -1,106 +1,72 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
-    <title>Git-splash</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#101827">
+  <meta name="description" content="Discover, preview, download and share beautiful images with Cletusplash.">
+   <link rel="stylesheet"href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+  <title>Cletusplash — Image discovery by Cletus</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
+  <section class="section">
+    <nav class="Nav" aria-label="Main navigation">
+      <a class="brand" href="#top" aria-label="Cletusplash home"><span class="brand-mark">C</span><span>Cletus<span class="brand-accent">plash</span><small>BY CLETUS</small></span></a>
+      <form class="searchBTN" role="search">
+        <span class="search-icon" aria-hidden="true">⌕</span>
+        <input type="search" placeholder="Search photos, moods, places..." name="text" class="input" aria-label="Search photos">
+        <button type="submit">Search</button>
+      </form>
+      <label class="theme-control" title="Toggle dark mode"><span>☼</span><input type="checkbox" id="themeToggle" aria-label="Toggle dark mode"><span class="theme-track"><i></i></span></label>
+    </nav>
 
-    <section class="section">
+    <main id="top">
+      <header class="hero">
 
-        <!-- NavBar -->
-         <nav class="Nav">
-        <h1>As-Api</h1>
+        <div class="hero-copy animate__animated animate__zoomIn">
+          <p class="eyebrow"><span></span> YOUR NEXT FAVORITE IMAGE STARTS HERE</p>
+          <h1>Find the image.<br><em>Feel the inspiration.</em></h1>
+          <p class="hero-description">Explore beautiful, high-resolution photography. Preview your favorites, download what you need, and share inspiration with the world.</p>
 
-        <div class="searchBTN">
-        <button><span>search</span></button>
-       <input type="text" placeholder="Search here..." name="text" class="input">
+          <a class="hero-cta" href="#discover">Explore photos <span aria-hidden="true"></span></a>
+
+          <div class="hero-note"><span class="note-icon">✦</span><span>Discover something worth sharing.</span></div>
         </div>
 
-
-         <label class="ui-switch">
-        <input type="checkbox" id="themeToggle">
-        <div class="slider">
-       <div class="circle"></div>
+        <div class="hero-art" aria-label="Featured photography">
+          <div class="art-orbit orbit-one"></div><div class="art-orbit orbit-two"></div>
+          <div class="art-card art-card-back animate__animated animate__zoomIn"><img src="img/wife.png" alt="Featured portrait preview"></div>
+          <div class="art-card art-card-front animate__animated animate__zoomIn"><img src="img/me.png" alt="Cletusplash featured image"></div>
+          <div class="floating-label"><span>✦</span><div><strong>Find your vibe</strong><small>Fresh visual inspiration</small></div></div>
         </div>
+      </header>
 
-   </label>
+      <section class="discover" id="discover">
+        <div class="section-heading"><div><p class="eyebrow">THE VISUAL COLLECTION</p><h2>Explore inspiration<span>.</span></h2><p class="section-subtitle">Search a topic or browse a fresh collection of images.</p></div><div class="results-badge"><span class="live-dot"></span> Made for curious minds</div></div>
+        <div class="quick-search" aria-label="Popular searches"><span>Try:</span><button type="button" data-query="nature">Nature</button><button type="button" data-query="architecture">Architecture</button><button type="button" data-query="travel">Travel</button><button type="button" data-query="technology">Technology</button><button type="button" data-query="minimalism">Minimalism</button></div>
+        <div class="status-message" id="status-message" role="status" aria-live="polite"></div>
+        <div class="image-container" id="image-container" aria-label="Image results"></div>
+        <div class="load_container" aria-live="polite"><div class="spinner"></div><span>Finding beautiful images...</span></div>
+        <button class="load-more" id="load-more" type="button">Load more images </button>
+      </section>
+    </main>
+    <footer><a class="footer-brand" href="#top">Cletus<span>plash</span></a><p>Made with curiosity by <strong>Asanyo Cletus</strong>.</p><a href="#top" class="back-top">Back to top ↑</a></footer>
+  </section>
 
-         </nav>
-
-         <!-- landing header  -->
-
-         <header>
-             <div class="star"></div>
-
-             
-        <div class="img_image">
-        <div class="Browse"><h1>Always Dowload 24/7 for free</h1></div>
-         <img src="img/me.png" alt="Hero" class="center-image" >
-        </div>
-
-         <div class="page_tag">
-        <div class="pageTag">
-         <h1>Explore</h1>
-            A world of beatiful, High-Resolution <br>
-            images Awaits You Browse,<br> Discover and Dowload <br>
-            the Perfect shot for any Purpose. 
-             <div class="BTN">Discover</div>
-        </div>    
-           <h2>Inspire Your Creativity With Every  Photo</h2>
-        </div>
-
-
-         </header>
-
-
-            <!-- image-container -->
-   <div class="image-container" id="image-container">
-
-         </div>
-
-
-
-
-
-         
-     <!-- Loader -->
- <div class="load_container">
-
-  <div class="loader">
-  <div class="loading-text">
-    Loading<span class="dot">.</span><span class="dot">.</span
-    ><span class="dot">.</span>
+  <div class="preview-modal" id="preview-modal" role="dialog" aria-modal="true" aria-labelledby="preview-title" aria-hidden="true">
+    <button class="modal-close" id="modal-close" type="button" aria-label="Close preview"></button>
+    <div class="preview-panel">
+      <div class="preview-image-wrap">
+        <img id="preview-image" src="" alt="">
+      </div><div class="preview-details"><p class="eyebrow">IMAGE PREVIEW</p><h2 id="preview-title">Your selected image</h2>
+        <p id="preview-credit">Photo from Unsplash</p><div class="preview-actions">
+<button class="button" id="preview-download" style="vertical-align:middle"><span>Download</span></button>
+<button id="preview-share" class="secondary-action" type="button"> Share</button><a id="preview-source" class="secondary-action" href="#" target="_blank" rel="noopener noreferrer">View source</a></div><p class="small-note">Please respect the original photographer's license and attribution requirements.</p></div></div>
   </div>
-  <div class="loading-bar-background">
-    <div class="loading-bar">
-      <div class="white-bars-container">
-        <div class="white-bar"></div>
-        <div class="white-bar"></div>
-        <div class="white-bar"></div>
-        <div class="white-bar"></div>
-        <div class="white-bar"></div>
-        <div class="white-bar"></div>
-        <div class="white-bar"></div>
-        <div class="white-bar"></div>
-        <div class="white-bar"></div>
-        <div class="white-bar"></div>
-      </div>
-    </div>
-  </div>
-</div>
 
-
-</div>
-
-
-
-
-
-    </section>
-    
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+  <script src="app.js" defer></script>
 </body>
-<script src="app.js"></script>
 </html>
+
