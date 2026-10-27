@@ -1,33 +1,29 @@
 # Image-dowloader
 
-
-
-
-
-# CletuSplash 📸
+# CletuSplash 
 
 ### Discover. Preview. Download. Share.
 
 CletuSplash is a responsive image discovery and downloading web application designed to help users explore images, preview their favourites, download images, and share them with others.
 
-## ✨ Features
+##  Features
 
-- 🔍 Search for images
-- 🖼️ Preview images before downloading
-- 📥 Download images
-- 📤 Share images with others
-- 📱 Responsive design for mobile, tablet, and desktop
-- 🌙 Theme switching (if supported in your current version)
-- ⚡ Smooth animations and interactive user experience
+-  Search for images
+-  Preview images before downloading
+-  Download images
+-  Share images with others
+-  Responsive design for mobile, tablet, and desktop
+-  Theme switching (if supported in your current version)
+-  Smooth animations and interactive user experience
 
-## 🛠️ Built With
+##  Built With
 
 - HTML5
 - CSS3
 - JavaScript
 - [Add your image API here]
 
-## 🚀 Live Demo
+##  Live Demo
 
 [View CletuSplash]((https://successspirite.github.io/Image-dowloader/))
 
