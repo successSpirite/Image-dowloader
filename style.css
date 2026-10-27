@@ -390,7 +390,6 @@ main{
         object-fit:cover;
         transition:transform .45s;
         cursor:zoom-in;
-        border: .2em solid red;
     }
 
     .imgContainer:hover img{
@@ -404,7 +403,7 @@ main{
         gap:7px;
         opacity:0;
         transform:translateY(5px);
-        transition:.2s
+        transition:.2s;
     }
     .imgContainer:hover .image-card-actions,.imgContainer:focus-within .image-card-actions{
         opacity:1;
