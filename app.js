@@ -68,7 +68,8 @@ function safeText(value, fallback = 'Untitled photo') {
 function makeAction(label, text, handler) {
   const button = document.createElement('button');
   button.type = 'button';
-  button.textContent = text;
+  // button.textContent = text;
+  button.innerHTML = text;
   button.setAttribute('aria-label', label);
   button.title = label;
   button.addEventListener('click', (event) => { event.preventDefault(); event.stopPropagation(); handler(); });
@@ -109,9 +110,31 @@ function displayPhotos(photos, append = false) {
     const actions = document.createElement('div');
     actions.className = 'image-card-actions';
     actions.append(
-      makeAction('Preview image', '⌕', () => openPreview(photo)),
-      makeAction('Download image', '↓', () => downloadPhoto(photo)),
-      makeAction('Share image', '↗', () => sharePhoto(photo))
+      makeAction('Preview image', `<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-emoji-heart-eyes-fill" viewBox="0 0 16 16">
+  <path d="M8 0a8 8 0 1 0 0 16A8 8 0 0 0 8 0M4.756 4.566c.763-1.424 4.02-.12.952 3.434-4.496-1.596-2.35-4.298-.952-3.434m6.559 5.448a.5.5 0 0 1 .548.736A4.5 4.5 0 0 1 7.965 13a4.5 4.5 0 0 1-3.898-2.25.5.5 0 0 1 .548-.736h.005l.017.005.067.015.252.055c.215.046.515.108.857.169.693.124 1.522.242 2.152.242s1.46-.118 2.152-.242a27 27 0 0 0 1.109-.224l.067-.015.017-.004.005-.002zm-.07-5.448c1.397-.864 3.543 1.838-.953 3.434-3.067-3.554.19-4.858.952-3.434z"/>
+</svg>`, () => openPreview(photo)),
+      makeAction('Download image', `<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-download" viewBox="0 0 16 16">
+  <path d="M.5 9.9a.5.5 0 0 1 .5.5v2.5a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1v-2.5a.5.5 0 0 1 1 0v2.5a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2v-2.5a.5.5 0 0 1 .5-.5"/>
+  <path d="M7.646 11.854a.5.5 0 0 0 .708 0l3-3a.5.5 0 0 0-.708-.708L8.5 10.293V1.5a.5.5 0 0 0-1 0v8.793L5.354 8.146a.5.5 0 1 0-.708.708z"/>
+</svg>`, () => downloadPhoto(photo)),
+      makeAction('Share image', `<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-share-fill" viewBox="0 0 16 16">
+  <path d="M11 2.5a2.5 2.5 0 1 1 .603 1.628l-6.718 3.12a2.5 2.5 0 0 1 0 1.504l6.718 3.12a2.5 2.5 0 1 1-.488.876l-6.718-3.12a2.5 2.5 0 1 1 0-3.256l6.718-3.12A2.5 2.5 0 0 1 11 2.5"/>
+</svg>`, () => sharePhoto(photo))
+
+
+
+
+
+// makeAction('Share image', `
+//   <svg xmlns="http://www.w3.org/2000/svg"
+//        width="20"
+//        height="20"
+//        fill="currentColor"
+//        viewBox="0 0 16 16"
+//        aria-hidden="true">
+//     <path d="M11 2.5a2.5 2.5 0 1 1 .603 1.628l-6.718 3.12a2.5 2.5 0 0 1 0 1.504l6.718 3.12a2.5 2.5 0 1 1-.488.876l-6.718-3.12a2.5 2.5 0 1 1 0-3.256l6.718-3.12A2.5 2.5 0 0 1 11 2.5"/>
+//   </svg>
+// `, () => sharePhoto(photo))
     );
     card.append(img, actions);
     imageContainer.appendChild(card);
