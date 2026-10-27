@@ -4,7 +4,7 @@
 
 
 
-# CletuSplash 
+# CletuSplash 📸
 
 ### Discover. Preview. Download. Share.
 
@@ -29,17 +29,21 @@ CletuSplash is a responsive image discovery and downloading web application desi
 
 ## 🚀 Live Demo
 
-[View CletuSplash](YOUR_LIVE_DEMO_LINK)
+[View CletuSplash]((https://successspirite.github.io/Image-dowloader/))
 
-## 📸 Screenshots
 
-Add screenshots of your desktop and mobile designs here.
+##  Screenshots
 
-![CletuSplash Desktop Preview](screenshots/desktop)
+### Desktop Preview
+![CletuSplash Desktop Preview](screenshots/desktop.png)
 
+### Mobile Preview
 ![CletuSplash Mobile Preview](screenshots/mobile.png)
 
-## 💻 Getting Started
+
+
+
+##  Getting Started
 
 1. Clone this repository:
 
@@ -53,7 +57,7 @@ Add screenshots of your desktop and mobile designs here.
 
 4. Start exploring and downloading images.
 
-## 📂 Project Structure
+## My  Project Structure
 
 ```text
 CletuSplash/
@@ -66,13 +70,13 @@ CletuSplash/
 
 Update the file names above to match your actual project structure.
 
-## 🎯 Project Goal
+##  Project Goal
 
 This project demonstrates my frontend development skills,
 including responsive web design, JavaScript interactions,
 API integration, and user-focused interface design.
 
-## 👨‍💻 Author
+##  Author
 
 **Asanyo Cletus**
 
