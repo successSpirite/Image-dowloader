@@ -464,7 +464,39 @@ main{
         margin:22px auto 0;
         padding:12px 18px;
         border:1px solid var(--line);
-        border-radius:11px;background:var(--surface);color:var(--text);font-size:12px;font-weight:700;cursor:pointer}.load-more:hover{border-color:var(--accent);color:var(--accent)}footer{display:flex;align-items:center;justify-content:space-between;gap:15px;padding:25px 5vw;border-top:1px solid var(--line);color:var(--muted);font-size:11px}.footer-brand{font:800 16px Manrope,sans-serif;color:var(--text);text-decoration:none}footer strong{color:var(--text)}.back-top{color:var(--accent);text-decoration:none}
+        border-radius:11px;
+        background:var(--surface);
+        color:var(--text);
+        font-size:12px;
+        font-weight:700;
+        cursor:pointer
+    }
+.load-more:hover{
+    border-color:var(--accent);
+    color:var(--accent)
+}
+footer{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:15px;
+    padding:25px 5vw;
+    border-top:1px solid var(--line);
+    color:var(--muted);
+    font-size:11px
+}
+.footer-brand{
+    font:800 16px Manrope,sans-serif;
+    color:var(--text);
+    text-decoration:none
+}
+footer strong{
+    color:var(--text)
+}
+.back-top{
+    color:var(--accent);
+    text-decoration:none
+}
         .preview-modal{
             position:fixed;
             inset:0;
@@ -618,8 +650,8 @@ main{
         transform:translate(-50%,0)
     }
 .dark-mode{
-    --bg:#0d1321
-    ;--surface:#151e30;
+    --bg:#0d1321;
+    --surface:#151e30;
     --text:#f1f4fc;
     --muted:#a0abc1;
     --line:#273248;
@@ -649,7 +681,11 @@ main{
 .dark-mode .art-card{
     background:#202b40
 }
-@media(max-width:900px){.Nav{padding:0 4vw;gap:14px}
+@media(max-width:900px){
+    .Nav{
+        padding:0 4vw;
+        gap:14px
+    }
 .brand{
     font-size:17px
 }
